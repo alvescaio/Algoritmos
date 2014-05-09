@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	n1 = n2;
 	n2 = n3;
 	
-	printf("A = %d\nd",n1);
+	printf("A = %d\n",n1);
 	printf("B = %d",n2); 
 	
 	
