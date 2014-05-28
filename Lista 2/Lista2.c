@@ -277,6 +277,130 @@ void q12(){
 	
 }
 
+void q13(){
+	int i = 1;
+	float maior = 0;
+	float menor = 0;
+	float somaMedia, mediaTurma;
+	float mediaAluno;
+	
+	printf("%iª nota: ",i);
+	scanf("%f",&mediaAluno);
+	
+	if(mediaAluno < 0){
+		printf("Não achamos nem uma média !");
+	}else{
+		maior = mediaAluno;
+		menor = mediaAluno;
+		somaMedia = mediaAluno;
+		
+		while(mediaAluno >= 0){
+			i++;
+			printf("%iª nota: ",i);
+			scanf("%f",&mediaAluno);
+			
+			if(mediaAluno < 0){
+				i--;
+				break;
+			}else{
+				if(mediaAluno > maior){
+					maior = mediaAluno;
+				}
+				if(mediaAluno < menor){
+					menor = mediaAluno;
+				}
+				somaMedia = somaMedia + mediaAluno;		
+			}
+			
+		}		
+	}
+	
+	mediaTurma = somaMedia/i;
+	
+	printf("Maior média: %f\n",maior);
+	printf("Menor média: %f\n",menor);
+	printf("Média da turma: %f\n",mediaTurma);
+	
+}
+
+void q14(){
+	int n;
+	int i;
+	
+	printf("N: ");
+	scanf("%i",&n);
+	
+	printf("\n%i primeiros pares: ",n); 
+	for(i=1;i<=(n*2);i++){
+		if(i%2==0){
+			printf("(%i) ",i);
+		}
+	}
+	
+	i=1;
+	printf("\n%i primeiros ímpares: ",n); 
+	for(i=1;i<=(n*2);i++){
+		if(i%2!=0){
+			printf("(%i) ",i);
+		}
+	}
+	
+}
+
+void q15(){
+	int n;
+	int i;
+	int primo = 0;//0 = false
+	
+	printf("N: ");
+	scanf("%i",&n);
+	
+	for(i=2;i<n;i++){
+		if(n%i==0){
+			primo = 1;//1 = true
+		}
+	}
+	
+	if(primo == 1  || n == 1){
+		printf("%i não é um número primo !",n);
+	}else{
+		printf("%i é um número primo !",n);
+	}
+	
+}
+
+void q16(){
+	int i=1;
+	int j;
+	int primo = 1;//true
+	int cont = 0;
+	int n;
+		
+	printf("N: ");
+	scanf("%i",&n);	
+	
+	printf("%i primeiros números primos: ",n);
+	
+	while(cont < n){
+		
+		i++;
+		j = 2;
+		while(j<i){
+			if(i%j==0){
+				primo = 0; // false
+			}
+			j++;
+		}
+		
+		if(primo == 0){
+			primo = 1;			
+		}else{
+			printf("(%i) ",i);
+			cont++;
+		}
+	}
+}
+
 int main(int argc, char **argv)
 {
 	//q1();
@@ -291,6 +415,10 @@ int main(int argc, char **argv)
 	//q10();
 	//q11();
 	//q12();
+	//q13();
+	//q14();
+	//q15();
+	//q16();
 	
 	return 0;
 }
